@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TodosController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-Route::get('todos', [TodosController::class, 'index']);
+Route::get('todos', 'TodosController@index');

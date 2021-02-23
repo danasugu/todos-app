@@ -1,31 +1,14 @@
 <?php
 
-namespace Database\Factories;
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\Todo;
-use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Model;
 use Faker\Generator as Faker;
 
-class TodoFactory extends Factory
-{
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
-    protected $model = Todo::class;
-
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
-    public function definition()
-    {
-        return [
-           'name'=>$faker->sentence(3),
-           'description'=>$faker->paragraph(4),
-           'completed'=>false
-        ];
-    }
-}
+$factory->define(\App\Todo::class, function (Faker $faker) {
+    return [
+        'name' => $faker->sentence(3),
+        'description' => $faker->paragraph(4),
+        'completed' => false
+    ];
+});

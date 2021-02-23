@@ -1,7 +1,5 @@
 <?php
 
-namespace Database\Seeders;
-
 use Illuminate\Database\Seeder;
 
 class TodosSeeder extends Seeder
@@ -13,6 +11,6 @@ class TodosSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Todo::factory()->count(30)->create(); 
+        factory(App\Todo::class, 5)->create();
     }
 }
